@@ -1,0 +1,21 @@
+server:
+  port: 8033
+  servlet:
+    session:
+      cookie:
+        path: /spot-center
+#提高ConfigClusterResolver日志级别为WARN
+logging:
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: warn
+spring:
+  application:
+    name: spot-center
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+      cache:
+        enabled: true
+        caffeine:
+          spec: initialCapacity=500,expireAfterWrite=5s

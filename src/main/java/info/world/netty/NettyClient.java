@@ -188,6 +188,7 @@ public class NettyClient extends SimpleChannelInboundHandler<Object> {
                 "],\n" +
                 "\"id\": 1\n" +
                 "}";
+
         future.channel().writeAndFlush(new TextWebSocketFrame(s));
         channel = future.channel();
     }
